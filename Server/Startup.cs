@@ -6,8 +6,7 @@ namespace Server
     public class Startup
     {
         public void ConfigureServices(IServiceCollection services)
-            => services.AddMvcCore()
-                .AddJsonFormatters();
+            => services.AddMvcCore();
 
         public void Configure(IApplicationBuilder app)
             => app.UseMvc();

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Tests</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.14, OS=Windows 10.0.16299.371 (1709/FallCreatorsUpdate/Redstone3)
+Intel Core i7-7700HQ CPU 2.80GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
+Frequency=2742186 Hz, Resolution=364.6726 ns, Timer=TSC
+.NET Core SDK=2.1.300-preview2-008533
+  [Host]     : .NET Core 2.1.0-preview2-26406-04 (CoreCLR 4.6.26406.07, CoreFX 4.6.26406.04), 64bit RyuJIT
+  Job-LGAMQP : .NET Core 2.1.0-preview2-26406-04 (CoreCLR 4.6.26406.07, CoreFX 4.6.26406.04), 64bit RyuJIT
+</code></pre>
+<pre><code>LaunchCount=25  
+</code></pre>
+
+<table>
+<thead><tr><th>                Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Rank</th>
+</tr>
+</thead><tbody><tr><td>ByteArray</td><td>806.4 us</td><td>3.452 us</td><td>30.01 us</td><td>802.2 us</td><td>4</td>
+</tr><tr><td>ByteArrayActionResult</td><td>737.4 us</td><td>4.212 us</td><td>42.36 us</td><td>728.8 us</td><td>1</td>
+</tr><tr><td>Csv</td><td>741.9 us</td><td>3.979 us</td><td>39.01 us</td><td>735.1 us</td><td>2</td>
+</tr><tr><td>JilJsonActionResult</td><td>744.1 us</td><td>3.340 us</td><td>29.08 us</td><td>741.6 us</td><td>2</td>
+</tr><tr><td>JilJsonActionResultNoNulls</td><td>778.1 us</td><td>3.307 us</td><td>35.13 us</td><td>774.6 us</td><td>3</td>
+</tr><tr><td>JilJsonFormatter</td><td>883.2 us</td><td>4.305 us</td><td>46.66 us</td><td>874.8 us</td><td>5</td>
+</tr><tr><td>JilJsonFormatterActionResult</td><td>878.6 us</td><td>10.594 us</td><td>106.59 us</td><td>847.2 us</td><td>5</td>
+</tr><tr><td>JsonDefault</td><td>880.4 us</td><td>4.977 us</td><td>47.25 us</td><td>876.8 us</td><td>5</td>
+</tr><tr><td>JsonDefaultActionResult</td><td>890.5 us</td><td>4.200 us</td><td>43.85 us</td><td>885.0 us</td><td>6</td>
+</tr></tbody></table>
+</body>
+</html>
